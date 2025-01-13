@@ -62,11 +62,16 @@ const Navbar: React.FC = () => {
     }
   };
 
+
+
+
+
   return (
     <header className="flex border-b py-4 px-4 sm:px-10 bg-white font-sans min-h-[70px] tracking-wide fixed top-0 left-0 right-0 z-50 shadow-md">
       <div className="flex flex-wrap items-center gap-4 w-full">
         <a href="https://readymadeui.com">
-          <h3 className="logo-page text-2xl font-semibold">CreateMyEvent</h3>
+          <h3 className="logo-page text-2xl font-semibold text-blue-500">CreateMyEvent</h3>
+
         </a>
 
         <div className="lg:!flex lg:flex-auto lg:ml-12 max-lg:hidden">
