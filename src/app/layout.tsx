@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {/* Navbar fixée en haut */}
         <Navbar />
         {/* Compense la hauteur de la navbar avec un padding-top pour éviter le chevauchement */}
-        <div className="pt-70px"> {/* Ajustez la valeur en fonction de la hauteur de votre navbar */}
+        <div className="pt-[70px]"> {/* Ajustez la valeur en fonction de la hauteur de votre navbar */}
           {children}
         </div>
       </body>

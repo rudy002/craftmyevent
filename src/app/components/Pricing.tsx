@@ -2,7 +2,7 @@ import React from 'react';
 
 const Pricing = () => {
   return (
-    <div className="font-[sans-serif] p-4">
+    <div id="pricing" className="container-pricing font-[sans-serif] ">
       <div className="max-w-5xl max-lg:max-w-2xl mx-auto">
         <div className="text-center">
           <h2 className="text-gray-800 text-3xl font-bold mb-4">Pricing</h2>
