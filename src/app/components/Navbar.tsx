@@ -4,10 +4,10 @@ import React from 'react';
 
 const Navbar: React.FC = () => {
   
-  const handleScrollToPricing = () => {
-    const pricingSection = document.getElementById('pricing');
-    if (pricingSection) {
-      const top = pricingSection.offsetTop;
+  const handleScrollToSection = (targetId: string) => {
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      const top = targetSection.offsetTop;
       const duration = 1000; // Durée en millisecondes (1 seconde)
       const start = window.pageYOffset;
       const distance = top - start;
@@ -32,46 +32,12 @@ const Navbar: React.FC = () => {
       requestAnimationFrame(animateScroll);
     }
   };
-
-  const handleScrollToExamples = () => {
-    const examplesSection = document.getElementById('examples');
-    if (examplesSection) {
-      const top = examplesSection.offsetTop;
-      const duration = 1000; // Durée en millisecondes (1 seconde)
-      const start = window.pageYOffset;
-      const distance = top - start;
-      let startTime: number | null = null;
-
-      const animateScroll = (currentTime: number) => {
-        if (!startTime) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const run = easeInOutQuad(timeElapsed, start, distance, duration);
-        window.scrollTo(0, run);
-
-        if (timeElapsed < duration) requestAnimationFrame(animateScroll);
-      };
-
-      const easeInOutQuad = (t: number, b: number, c: number, d: number) => {
-        t /= d / 2;
-        if (t < 1) return (c / 2) * t * t + b;
-        t--;
-        return (-c / 2) * (t * (t - 2) - 1) + b;
-      };
-
-      requestAnimationFrame(animateScroll);
-    }
-  };
-
-
-
-
 
   return (
     <header className="flex border-b py-4 px-4 sm:px-10 bg-white font-sans min-h-[70px] tracking-wide fixed top-0 left-0 right-0 z-50 shadow-md">
       <div className="flex flex-wrap items-center gap-4 w-full">
         <a href="https://readymadeui.com">
           <h3 className="logo-page text-2xl font-semibold text-blue-500">CraftMyEvent</h3>
-
         </a>
 
         <div className="lg:!flex lg:flex-auto lg:ml-12 max-lg:hidden">
@@ -122,7 +88,7 @@ const Navbar: React.FC = () => {
               <li>
                 <a
                   href="#Examples"
-                  onClick={handleScrollToExamples}
+                  onClick={() => handleScrollToSection('examples')}
                   className="hover:text-[#007bff] text-gray-600 block font-bold text-[15px]"
                 >
                   Examples
@@ -130,8 +96,8 @@ const Navbar: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#pricing" // Ensure the link is #pricing
-                  onClick={handleScrollToPricing}
+                  href="#pricing"
+                  onClick={() => handleScrollToSection('pricing')}
                   className="hover:text-[#007bff] text-gray-600 block font-bold text-[15px]"
                 >
                   Pricing
