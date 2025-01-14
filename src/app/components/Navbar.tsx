@@ -74,15 +74,7 @@ const Navbar: React.FC = () => {
                   href="javascript:void(0)"
                   className="hover:text-[#007bff] text-[#007bff] block font-bold text-[15px]"
                 >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="javascript:void(0)"
-                  className="hover:text-[#007bff] text-gray-600 block font-bold text-[15px]"
-                >
-                  Shop
+                  
                 </a>
               </li>
               <li>

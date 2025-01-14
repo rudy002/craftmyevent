@@ -8,9 +8,18 @@
 }
 
 
-body {
-  padding-top: 90px; /* Ajuste la valeur en fonction de la hauteur de ta navbar */
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
 }
+
+.animate-gradient {
+  animation: gradient 2s linear infinite;
+  background-size: 200% 100%;
+}
+
+
